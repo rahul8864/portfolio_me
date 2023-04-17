@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './sidebar.css'
+// import './sidebar.css'
 import myAvatar from '../assets/images/my-avatar.png'
 
 function Sidebar() {

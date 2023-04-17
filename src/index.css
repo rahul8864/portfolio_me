@@ -65,3 +65,42 @@
     user-select: none;
     -webkit-user-select: none;
   }
+
+  body::-webkit-scrollbar {
+          width: 20px;
+  }
+
+  body::-webkit-scrollbar-track {
+          background: var(--smoky-black);
+  }
+
+  body::-webkit-scrollbar-thumb {
+          border: 5px solid var(--smoky-black);
+          background: hsla(0, 0%, 100%, 0.1);
+          border-radius: 20px;
+          box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
+                  inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+          background: hsla(0, 0%, 100%, 0.15);
+  }
+
+  body::-webkit-scrollbar-button {
+          height: 60px;
+  }
+
+  @media (min-width: 580px) {
+
+          :root {
+
+                  --fs-1: 32px;
+                  --fs-2: 24px;
+                  --fs-3: 26px;
+                  --fs-4: 18px;
+                  --fs-6: 15px;
+                  --fs-7: 15px;
+                  --fs-8: 12px;
+
+          }
+  }

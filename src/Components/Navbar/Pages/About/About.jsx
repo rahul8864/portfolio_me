@@ -2,7 +2,7 @@ import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import './about.css';
+// import './about.css';
 import webDesign from '../../../../assets/images/icon-design.svg';
 import avatar1 from '../../../../assets/images/avatar-1.png';
 import clients1 from '../../../../assets/images/logo-1-color.png';
@@ -21,7 +21,27 @@ function About() {
         margin: 15,
         center: true,
         autoplay: true,
-        dots: false
+        dots: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            450: {
+                items: 3
+            },
+            580: {
+                items: 3
+            },
+            768: {
+                items: 5
+            },
+            1024: {
+                items: 7
+            },
+            1250: {
+                items: 6,
+            }
+        }
       };
   return (
     <article className="about active">
@@ -95,9 +115,9 @@ function About() {
                 <OwlCarousel className="owl-carousel owl-theme" {...options}>
                     {techName?.map((item, index) => (
                             <li className='tech-item' key={index}>
-                                <div className="content-card" style={{ paddingTop: '15px' }}>
+                                <div className="content-card" style={{ paddingTop: '15px', width: '120px', height: "120px", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                     <img src={`/src/assets/tech/${item}.svg`} className='tech-image' alt=""/>
-                                    <h4 className='h4 tech-text'>{item.split('-').join(' ').split("(", 1)}</h4>
+                                    {/* <h6 className='h6 tech-text'>{item.split('-').join(' ').split("(", 1)}</h6> */}
                                 </div>
                             </li>
                         ))}

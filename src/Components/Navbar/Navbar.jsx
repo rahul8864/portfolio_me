@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './navbar.css'
+// import './navbar.css'
 import About from './Pages/About/About';
 import Resume from './Pages/Resume/Resume';
 
@@ -24,13 +24,13 @@ function Navbar() {
                     ))}
                 </ul>
             </nav>
+            {active === 'About' && (
+                <About />
+            )}
+            {active === 'Resume' && (
+                <Resume />
+            )}
         </div>
-        {active === 'About' && (
-            <About />
-        )}
-        {active === 'Resume' && (
-            <Resume />
-        )}
     </>
   )
 }
