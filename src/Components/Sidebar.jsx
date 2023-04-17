@@ -12,9 +12,9 @@ function Sidebar() {
         {id: 3, title: "Location", iconName:"location-outline", href:"mailto:rahulkumar8864084963@gmail.com", name: "Bokaro, Jharkhand, India"},
     ]
     const personalSocial = [
-        {id: 1, link: "Linkedin", iconName:"logo-linkedin"},
-        {id: 2, link: "Github", iconName:"logo-github"},
-        {id: 3, link: "Youtube", iconName:"logo-youtube"},
+        {id: 1, link: "https://www.linkedin.com/in/rahulkumarrj/", iconName:"logo-linkedin"},
+        {id: 2, link: "https://github.com/rahul8864", iconName:"logo-github"},
+        {id: 3, link: "https://www.youtube.com/channel/UCtVH2uoys5vZAEc6p0wud_A", iconName:"logo-youtube"},
         {id: 4, link: "Instagram", iconName:"logo-instagram"},
     ]
   return (
@@ -60,7 +60,7 @@ function Sidebar() {
             <ul className='social-list'>
                 {personalSocial?.map(social => (
                     <li className="social-item" key={social.id}>
-                        <a href={social.link} className='social-link'>
+                        <a href={social.link} className='social-link' target='_blank'>
                             <ion-icon name={social.iconName} />
                         </a>
                     </li>
