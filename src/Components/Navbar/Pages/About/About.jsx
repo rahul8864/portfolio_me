@@ -115,12 +115,12 @@ function About() {
         <section className="tech">
             <h3 className="h3 tech-title">Tech Stack</h3>
             <ul className='tech-list has-scrollbar'>
-                <Swiper modules={[Autoplay]} breakpoints={{ 320: {slidesPerView: 2, spaceBetween: 0}, 425: {slidesPerView: 3, spaceBetween: 0}, 768: {slidesPerView: 4.5, spaceBetween: 0}, 1024: {slidesPerView: 6, spaceBetween: 0} }} centeredSlides={false} spaceBetween={0} slidesPerView={6} className='mySwiper' autoplay={{ delay: 2500, disableOnInteraction: false }}>
+                <Swiper modules={[Autoplay]} breakpoints={{ 320: {slidesPerView: 2, spaceBetween: 0}, 425: {slidesPerView: 3, spaceBetween: 0}, 768: {slidesPerView: 4.5, spaceBetween: 0}, 1024: {slidesPerView: 6, spaceBetween: 0} }} centeredSlides={false} spaceBetween={0} slidesPerView={1} className='mySwiper' autoplay={{ delay: 2500, disableOnInteraction: false }}>
                     {techName?.map((item, index) => (
                         <SwiperSlide>
                             <li className='tech-item' key={index}>
                                 <div className="content-card" style={{ paddingTop: '15px', width: '120px', height: "120px", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                    <img src={`/src/assets/tech/${item}.svg`} className='tech-image' alt=""/>
+                                    <img src={`https://portfolio-me-smoky.vercel.app/src/assets/tech/${item}.svg`} className='tech-image' alt=""/>
                                     {/* <h6 className='h6 tech-text'>{item.split('-').join(' ').split("(", 1)}</h6> */}
                                 </div>
                             </li>
