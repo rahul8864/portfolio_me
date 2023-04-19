@@ -29,10 +29,27 @@ body::-webkit-scrollbar-button {
     margin-bottom: 20px;
 }
 .tech-item {
+    min-width: 120px;
+    scroll-snap-align: center;
     padding-bottom: 20px;
+}
+.tech-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* gap: 15px; */
+    /* margin: 0 -15px;
+    padding: 25px 15px;
+    padding-bottom: 35px; */
+    /* overflow-x: auto;
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory; */
 }
 .tech-image {
     /* padding: 15px; */
+    width: 60px;
+    height: 60px;
 }
 .tech-text {
     color: var(--light-gray);

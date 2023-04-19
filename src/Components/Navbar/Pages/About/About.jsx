@@ -1,7 +1,4 @@
 import React from 'react';
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 // import './about.css';
 import webDesign from '../../../../assets/images/icon-design.svg';
 import avatar1 from '../../../../assets/images/avatar-1.png';
@@ -12,37 +9,43 @@ import clients4 from '../../../../assets/images/logo-4-color.png';
 import clients5 from '../../../../assets/images/logo-5-color.png';
 import clients6 from '../../../../assets/images/logo-6-color.png';
 
+import { Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+
 function About() {
     const clientImage = [clients1, clients2, clients3, clients4, clients5, clients6];
     const techName = ['Ant-Design', 'Bootstrap', 'CSS3', 'Express', 'Git', 'GitHub', 'GitLab', 'Heroku', 'HTML5', 'JavaScript', 'Material-UI', 'MongoDB', 'Mongoose.js', 'Node.js', 'Nodemon', 'NPM', 'Postman', 'React-Bootstrap', 'React', 'Redux', 'Sass', 'Socket.io', 'SSH', 'Stack-Overflow', 'Storybook', 'Tailwind-CSS', 'Vercel', 'Visual-Studio-Code-(VS-Code)', 'Vite.js'];
-    const options = {
-        loop: true,
-        items: 11,
-        margin: 15,
-        center: true,
-        autoplay: true,
-        dots: false,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            450: {
-                items: 3
-            },
-            580: {
-                items: 3
-            },
-            768: {
-                items: 5
-            },
-            1024: {
-                items: 7
-            },
-            1250: {
-                items: 6,
-            }
-        }
-      };
+    // const options = {
+    //     loop: true,
+    //     items: 11,
+    //     margin: 15,
+    //     center: true,
+    //     autoplay: true,
+    //     dots: false,
+    //     responsive: {
+    //         0: {
+    //             items: 1,
+    //         },
+    //         450: {
+    //             items: 3
+    //         },
+    //         580: {
+    //             items: 3
+    //         },
+    //         768: {
+    //             items: 5
+    //         },
+    //         1024: {
+    //             items: 7
+    //         },
+    //         1250: {
+    //             items: 6,
+    //         }
+    //     }
+    //   };
   return (
     <article className="about active">
         <header>
@@ -111,17 +114,19 @@ function About() {
         </section>
         <section className="tech">
             <h3 className="h3 tech-title">Tech Stack</h3>
-            <ul className='tech-list'>
-                <OwlCarousel className="owl-carousel owl-theme" {...options}>
+            <ul className='tech-list has-scrollbar'>
+                <Swiper modules={[Autoplay]} breakpoints={{ 320: {slidesPerView: 2, spaceBetween: 0}, 425: {slidesPerView: 3, spaceBetween: 0}, 768: {slidesPerView: 4.5, spaceBetween: 0}, 1024: {slidesPerView: 6, spaceBetween: 0} }} centeredSlides={false} spaceBetween={0} slidesPerView={6} className='mySwiper' autoplay={{ delay: 2500, disableOnInteraction: false }}>
                     {techName?.map((item, index) => (
+                        <SwiperSlide>
                             <li className='tech-item' key={index}>
                                 <div className="content-card" style={{ paddingTop: '15px', width: '120px', height: "120px", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                     <img src={`/src/assets/tech/${item}.svg`} className='tech-image' alt=""/>
                                     {/* <h6 className='h6 tech-text'>{item.split('-').join(' ').split("(", 1)}</h6> */}
                                 </div>
                             </li>
+                        </SwiperSlide>
                         ))}
-                </OwlCarousel>
+                </Swiper>
             </ul>
         </section>
     </article>
