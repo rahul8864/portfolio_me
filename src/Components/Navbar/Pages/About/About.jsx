@@ -15,9 +15,64 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 
+import AntDesign from '../../../../assets/tech/Ant-Design.svg';
+import Bootstrap from '../../../../assets/tech/Bootstrap.svg';
+import css from '../../../../assets/tech/CSS3.svg';
+import Express from '../../../../assets/tech/Express.svg';
+import Git from '../../../../assets/tech/Git.svg';
+import GitHub from '../../../../assets/tech/GitHub.svg';
+import GitLab from '../../../../assets/tech/GitLab.svg';
+import Heroku from '../../../../assets/tech/Heroku.svg';
+import html from '../../../../assets/tech/HTML5.svg';
+import JavaScript from '../../../../assets/tech/JavaScript.svg';
+import MaterialUI from '../../../../assets/tech/Material-UI.svg';
+import MongoDB from '../../../../assets/tech/MongoDB.svg';
+import Mongoose from '../../../../assets/tech/Mongoose.js.svg';
+import Node from '../../../../assets/tech/Node.js.svg';
+import Nodemon from '../../../../assets/tech/Nodemon.svg';
+import npm from '../../../../assets/tech/NPM.svg';
+import Postman from '../../../../assets/tech/Postman.svg';
+import ReactBootstrap from '../../../../assets/tech/React-Bootstrap.svg';
+import Reactjs from '../../../../assets/tech/React.svg';
+import Redux from '../../../../assets/tech/Redux.svg';
+import Sass from '../../../../assets/tech/Sass.svg';
+import Socket from '../../../../assets/tech/Socket.io.svg';
+import ssh from '../../../../assets/tech/SSH.svg';
+import StackOverflow from '../../../../assets/tech/Stack-Overflow.svg';
+import Storybook from '../../../../assets/tech/Storybook.svg';
+import TailwindCSS from '../../../../assets/tech/Tailwind-CSS.svg';
+import Vercel from '../../../../assets/tech/Vercel.svg';
+import Visual from '../../../../assets/tech/Visual-Studio-Code-(VS-Code).svg';
+import Vite from '../../../../assets/tech/Vite.js.svg';
+
+const techImage = [AntDesign, Bootstrap, css, Express, Git, GitHub, GitLab, Heroku, html, JavaScript, MaterialUI, MongoDB, Mongoose, Node, Nodemon, npm, Postman, ReactBootstrap, Reactjs, Redux, Sass, Socket, ssh, StackOverflow, Storybook, TailwindCSS, Vercel, Visual, Vite];
+
+// const techName = ['Ant-Design', 'Bootstrap', 'CSS3', 'Express', 'Git', 'GitHub', 'GitLab', 'Heroku', 'HTML5', 'JavaScript', 'Material-UI', 'MongoDB', 'Mongoose.js', 'Node.js', 'Nodemon', 'NPM', 'Postman', 'React-Bootstrap', 'React', 'Redux', 'Sass', 'Socket.io', 'SSH', 'Stack-Overflow', 'Storybook', 'Tailwind-CSS', 'Vercel', 'Visual-Studio-Code-(VS-Code)', 'Vite.js'];
+// let check = ''
+// for (let i of techName) {
+//     check += `import ${i} from '../../../../assets/tech/${i}.svg';`
+// }
+// console.log(check);
+
+// export const importAllImages = (r) => {
+//     const images = {};
+//     r.keys().map((item) => {
+//       images[item.replace('./', '')] = r(item);
+//       return true;
+//     });
+//     return images;
+//   };
+
 function About() {
     const clientImage = [clients1, clients2, clients3, clients4, clients5, clients6];
-    const techName = ['Ant-Design', 'Bootstrap', 'CSS3', 'Express', 'Git', 'GitHub', 'GitLab', 'Heroku', 'HTML5', 'JavaScript', 'Material-UI', 'MongoDB', 'Mongoose.js', 'Node.js', 'Nodemon', 'NPM', 'Postman', 'React-Bootstrap', 'React', 'Redux', 'Sass', 'Socket.io', 'SSH', 'Stack-Overflow', 'Storybook', 'Tailwind-CSS', 'Vercel', 'Visual-Studio-Code-(VS-Code)', 'Vite.js'];
+    // const techName = ['AntDesign', 'Bootstrap', 'CSS3', 'Express', 'Git', 'GitHub', 'GitLab', 'Heroku', 'HTML5', 'JavaScript', 'Material-UI', 'MongoDB', 'Mongoose.js', 'Node.js', 'Nodemon', 'NPM', 'Postman', 'React-Bootstrap', 'React', 'Redux', 'Sass', 'Socket.io', 'SSH', 'Stack-Overflow', 'Storybook', 'Tailwind-CSS', 'Vercel', 'Visual-Studio-Code-(VS-Code)', 'Vite.js'];
+    // const images = importAllImages(
+    //     require.context(
+    //       '../../../src/icons/inspection-icons',
+    //       false,
+    //       /\.(png|jpe?g|svg)$/
+    //     )
+    //   );
     // const options = {
     //     loop: true,
     //     items: 11,
@@ -116,11 +171,12 @@ function About() {
             <h3 className="h3 tech-title">Tech Stack</h3>
             <ul className='tech-list has-scrollbar'>
                 <Swiper modules={[Autoplay]} breakpoints={{ 320: {slidesPerView: 2, spaceBetween: 0}, 425: {slidesPerView: 3, spaceBetween: 0}, 768: {slidesPerView: 4.5, spaceBetween: 0}, 1024: {slidesPerView: 6, spaceBetween: 0} }} centeredSlides={false} spaceBetween={0} slidesPerView={1} className='mySwiper' autoplay={{ delay: 2500, disableOnInteraction: false }}>
-                    {techName?.map((item, index) => (
+                    {techImage?.map((item, index) => (
                         <SwiperSlide>
                             <li className='tech-item' key={index}>
-                                <div className="content-card" style={{ paddingTop: '15px', width: '120px', height: "120px", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                    <img src={`https://portfolio-me-smoky.vercel.app/src/assets/tech/${item}.svg`} className='tech-image' alt=""/>
+                                <div className="content-card" style={{ padding: '15px', width: '120px', height: "120px", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    {/* <img src={import(`../../../../assets/tech/${item}.svg`)} className='tech-image' alt=""/> */}
+                                    <img src={item} className='tech-image' alt=""/>
                                     {/* <h6 className='h6 tech-text'>{item.split('-').join(' ').split("(", 1)}</h6> */}
                                 </div>
                             </li>
