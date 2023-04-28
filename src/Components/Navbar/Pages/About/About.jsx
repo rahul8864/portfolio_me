@@ -45,25 +45,25 @@ import Vercel from '../../../../assets/tech/Vercel.svg';
 import Visual from '../../../../assets/tech/Visual-Studio-Code-(VS-Code).svg';
 import Vite from '../../../../assets/tech/Vite.js.svg';
 
-const techImage = [AntDesign, Bootstrap, css, Express, Git, GitHub, GitLab, Heroku, html, JavaScript, MaterialUI, MongoDB, Mongoose, Node, Nodemon, npm, Postman, ReactBootstrap, Reactjs, Redux, Sass, Socket, ssh, StackOverflow, Storybook, TailwindCSS, Vercel, Visual, Vite];
+// const techImage = [AntDesign, Bootstrap, css, Express, Git, GitHub, GitLab, Heroku, html, JavaScript, MaterialUI, MongoDB, Mongoose, Node, Nodemon, npm, Postman, ReactBootstrap, Reactjs, Redux, Sass, Socket, ssh, StackOverflow, Storybook, TailwindCSS, Vercel, Visual, Vite];
 
-// const techName = ['Ant-Design', 'Bootstrap', 'CSS3', 'Express', 'Git', 'GitHub', 'GitLab', 'Heroku', 'HTML5', 'JavaScript', 'Material-UI', 'MongoDB', 'Mongoose.js', 'Node.js', 'Nodemon', 'NPM', 'Postman', 'React-Bootstrap', 'React', 'Redux', 'Sass', 'Socket.io', 'SSH', 'Stack-Overflow', 'Storybook', 'Tailwind-CSS', 'Vercel', 'Visual-Studio-Code-(VS-Code)', 'Vite.js'];
 // let check = ''
 // for (let i of techName) {
-//     check += `import ${i} from '../../../../assets/tech/${i}.svg';`
+    //     check += `import ${i} from '../../../../assets/tech/${i}.svg';`
 // }
 // console.log(check);
 
 // export const importAllImages = (r) => {
 //     const images = {};
 //     r.keys().map((item) => {
-//       images[item.replace('./', '')] = r(item);
-//       return true;
-//     });
-//     return images;
-//   };
-
-function About() {
+    //       images[item.replace('./', '')] = r(item);
+    //       return true;
+    //     });
+    //     return images;
+    //   };
+    
+    function About() {
+    const techName = ['Ant-Design', 'Bootstrap', 'CSS3', 'Express', 'Git', 'GitHub', 'GitLab', 'Heroku', 'HTML5', 'JavaScript', 'Material-UI', 'MongoDB', 'Mongoose.js', 'Node.js', 'Nodemon', 'NPM', 'Postman', 'React-Bootstrap', 'React', 'Redux', 'Sass', 'Socket.io', 'SSH', 'Stack-Overflow', 'Storybook', 'Tailwind-CSS', 'Vercel', 'Visual-Studio-Code-(VS-Code)', 'Vite.js'];
     const clientImage = [clients1, clients2, clients3, clients4, clients5, clients6];
     // const techName = ['AntDesign', 'Bootstrap', 'CSS3', 'Express', 'Git', 'GitHub', 'GitLab', 'Heroku', 'HTML5', 'JavaScript', 'Material-UI', 'MongoDB', 'Mongoose.js', 'Node.js', 'Nodemon', 'NPM', 'Postman', 'React-Bootstrap', 'React', 'Redux', 'Sass', 'Socket.io', 'SSH', 'Stack-Overflow', 'Storybook', 'Tailwind-CSS', 'Vercel', 'Visual-Studio-Code-(VS-Code)', 'Vite.js'];
     // const images = importAllImages(
@@ -171,12 +171,12 @@ function About() {
             <h3 className="h3 tech-title">Tech Stack</h3>
             <ul className='tech-list has-scrollbar'>
                 <Swiper modules={[Autoplay]} breakpoints={{ 320: {slidesPerView: 2, spaceBetween: 0}, 425: {slidesPerView: 3, spaceBetween: 0}, 768: {slidesPerView: 4.5, spaceBetween: 0}, 1024: {slidesPerView: 6, spaceBetween: 0} }} centeredSlides={false} spaceBetween={0} slidesPerView={1} className='mySwiper' autoplay={{ delay: 2500, disableOnInteraction: false }}>
-                    {techImage?.map((item, index) => (
+                    {techName?.map((item, index) => (
                         <SwiperSlide>
                             <li className='tech-item' key={index}>
                                 <div className="content-card" style={{ padding: '15px', width: '120px', height: "120px", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                     {/* <img src={import(`../../../../assets/tech/${item}.svg`)} className='tech-image' alt=""/> */}
-                                    <img src={item} className='tech-image' alt=""/>
+                                    <img src={`${window.location.origin}/tech/${item}.svg`} className='tech-image' alt=""/>
                                     {/* <h6 className='h6 tech-text'>{item.split('-').join(' ').split("(", 1)}</h6> */}
                                 </div>
                             </li>
