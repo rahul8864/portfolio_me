@@ -27,7 +27,6 @@ function Resume() {
     {id: 9, name: 'HTML', percent: '90'},
   ]
 
-  console.log(workExperience)
   return (
     <article className='resume active'>
       <header>

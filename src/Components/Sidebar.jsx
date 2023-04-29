@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import './sidebar.css'
-import myAvatar from '../assets/images/my-avatar.png'
+// import myAvatar from '../assets/images/my-avatar.png'
 
 function Sidebar() {
     
@@ -21,7 +21,7 @@ function Sidebar() {
     <aside className={`sidebar ${active ? 'active' : ''}`}>
         <div className="sidebar-info">
             <figure className="avatar-box">
-                <img src={myAvatar} alt="Rahul Kumar" width="80"/>
+                <img src={`${window.location.origin}/assets/images/my-avatar.png`} alt="Rahul Kumar" width="80"/>
             </figure>
             <div className="info-content">
                 <h1 className='name' title='Rahul Kumar'>Rahul Kumar</h1>
