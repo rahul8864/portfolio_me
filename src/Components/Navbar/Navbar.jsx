@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // import './navbar.css'
 import About from './Pages/About/About';
 import Resume from './Pages/Resume/Resume';
+import ContactUS from './Pages/ContactUs/ContactUS';
 
 function Navbar() {
     const [active, setActive] = useState('About');
@@ -29,6 +30,9 @@ function Navbar() {
             )}
             {active === 'Resume' && (
                 <Resume />
+            )}
+            {active === 'Contact Us' && (
+                <ContactUS />
             )}
         </div>
     </>

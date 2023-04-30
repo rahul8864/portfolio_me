@@ -79,10 +79,10 @@ import 'swiper/css';
         <section className='service'>
             <h3 className='h3 service-title'>What i'm doing</h3>
             <ul className="service-list">
-                {Array.from(Array(4), (_, i) => (
+                {['app', 'design', 'dev', 'photo'].map((item, i) => (
                     <li className="service-item" key={i}>
                         <div className="service-icon-box">
-                            <img src="" alt="" width="40" />
+                            <img src={`${window.location.origin}/assets/images/icon-${item}.svg`} alt="" width="40" />
                         </div>
                         <div className="service-content-box">
                             <h4 className="h4 service-item-title">Web design</h4>

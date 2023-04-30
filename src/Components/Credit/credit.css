@@ -1,0 +1,63 @@
+/* #text {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    animation: effect 8s linear infinite;
+    bottom: 70px;
+    right: 0px;
+}
+#text span {
+    position: absolute;
+    left: 50%;
+    display: block;
+    transform-origin: 0 75px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #fff;
+}
+*/
+
+@keyframes effect {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+.circle {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    right: 50px;
+    bottom: 50px;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+}
+.logo {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url("/assets/tech/GitHub.svg");
+    background-size: cover;
+}
+.text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: effect 8s linear infinite;
+}
+
+.text span {
+    position: absolute;
+    left: 50%;
+    font-size: 0.2em;
+    text-transform: uppercase;
+    transform-origin: 0 25px;
+}
