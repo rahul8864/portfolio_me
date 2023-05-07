@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import About from './Pages/About/About';
 import Resume from './Pages/Resume/Resume';
 import ContactUS from './Pages/ContactUs/ContactUS';
+import Chat from './Pages/Chat/Chat';
 
 function Navbar() {
     const [active, setActive] = useState('About');
@@ -11,7 +12,8 @@ function Navbar() {
         {id: 1, name: 'About'},
         {id: 2, name: 'Resume'},
         {id: 3, name: 'Projects'},
-        {id: 4, name: 'Contact Us'},
+        {id: 4, name: 'Chat'},
+        {id: 5, name: 'Contact Us'},
     ];
   return (
     <>
@@ -33,6 +35,9 @@ function Navbar() {
             )}
             {active === 'Contact Us' && (
                 <ContactUS />
+            )}
+            {active === 'Chat' && (
+                <Chat />
             )}
         </div>
     </>
