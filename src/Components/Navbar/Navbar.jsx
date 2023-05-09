@@ -4,6 +4,7 @@ import About from './Pages/About/About';
 import Resume from './Pages/Resume/Resume';
 import ContactUS from './Pages/ContactUs/ContactUS';
 import Chat from './Pages/Chat/Chat';
+import Projects from './Pages/Projects/Projects';
 
 function Navbar() {
     const [active, setActive] = useState('About');
@@ -35,6 +36,9 @@ function Navbar() {
             )}
             {active === 'Contact Us' && (
                 <ContactUS />
+            )}
+            {active === 'Projects' && (
+                <Projects />
             )}
             {active === 'Chat' && (
                 <Chat />
