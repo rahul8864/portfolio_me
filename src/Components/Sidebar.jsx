@@ -15,7 +15,7 @@ function Sidebar() {
         {id: 1, link: "https://www.linkedin.com/in/rahulkumarrj/", iconName:"logo-linkedin"},
         {id: 2, link: "https://github.com/rahul8864", iconName:"logo-github"},
         {id: 3, link: "https://www.youtube.com/channel/UCtVH2uoys5vZAEc6p0wud_A", iconName:"logo-youtube"},
-        {id: 4, link: "Instagram", iconName:"logo-instagram"},
+        {id: 4, link: "https://stackoverflow.com/users/21374885/rahul-kumar-rj", iconName:"logo-stackoverflow"},
     ]
   return (
     <aside className={`sidebar ${active ? 'active' : ''}`}>
