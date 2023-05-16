@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import './navbar.css'
 import About from './Pages/About/About';
 import Resume from './Pages/Resume/Resume';
@@ -14,8 +14,22 @@ function Navbar() {
         {id: 2, name: 'Resume'},
         {id: 3, name: 'Projects'},
         {id: 4, name: 'Chat'},
-        {id: 5, name: 'Contact Us'},
+        {id: 5, name: 'Contact'},
     ];
+
+    useEffect(() => {
+        if (window.location.pathname === '/') {
+            window.history.replaceState({}, '', '/About');
+        }
+
+        setActive(window.location.pathname.substring(1))
+    }, [])
+
+    const handleChangeTabs = (item) => {
+        window.history.replaceState({}, '', `/${item}`);
+        setActive(item);
+    }
+
   return (
     <>
         <div className='main-content'>
@@ -23,7 +37,7 @@ function Navbar() {
                 <ul className="navbar-list">
                     {menuList?.map(menu => (
                         <li className="navbar-item" key={menu.id}>
-                            <button className={`navbar-link ${menu.name === active ? 'active' : ''}`} onClick={() => setActive(menu.name)}>{menu.name}</button>
+                            <button className={`navbar-link ${menu.name === active ? 'active' : ''}`} onClick={() => handleChangeTabs(menu.name)}>{menu.name}</button>
                         </li>
                     ))}
                 </ul>
@@ -34,7 +48,7 @@ function Navbar() {
             {active === 'Resume' && (
                 <Resume />
             )}
-            {active === 'Contact Us' && (
+            {active === 'Contact' && (
                 <ContactUS />
             )}
             {active === 'Projects' && (
