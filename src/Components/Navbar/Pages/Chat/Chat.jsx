@@ -10,9 +10,16 @@ const openApi = new OpenAIApi(config);
 
 class Chat extends PureComponent {
     state = {
-        message: "",
+        message: "Hello I'm Rahul Kumar",
         chat: [],
         isLoading: false
+    }
+
+    componentDidMount() {
+        // let messages = "Hello I'm Rahul Kumar";
+        // this.setState({ message: "Hello I'm Rahul Kumar" }, (e) => this.submit(e, messages));
+        // (e) => this.submit(e, message);
+        this.buttonRef.click();
     }
 
     submit = async (e, message) => {
@@ -47,28 +54,30 @@ class Chat extends PureComponent {
 
                 <div className="chat">
                     <div className="user">
-                        <div className="has-scrollbar" style={{ overflow: "auto", display: "flex", flexDirection: "column", flex: "0 0 600px", margin: "10px" }}>
+                        <div className="has-scrollbar" style={{ overflow: "auto", display: "flex", flexDirection: "column", flex: "0 0 600px" }}>
                             {chat && chat?.length > 0 && (
                                 chat.map(item => (
-                                    <div>
+                                    <div style={ item.role === "user" ? { borderRadius: "10px 10px 0 0", background: "#181819", padding: "5px" } : { borderRadius: "0px 0px 10px 10px", background: "#121213", padding: "5px", marginBottom: "10px" }}>
                                         {item.role === "user" ? (
                                             <div className='user_prompt'>
                                                 <div style={{ height: "100%", marginBottom: "auto" }}>
                                                     <img src={`${window.location.origin}/assets/images/my-avatar.png`} alt="user" width="50" />
                                                 </div>
                                                 <div>
-                                                    <span>{item.content}</span>
+                                                    <span className="navbar-link prompt">{item.content}</span>
                                                 </div>
                                             </div>
                                         ) : (
+                                            <>
                                             <div className="assistant_work">
                                                 <div style={{ height: "100%", marginBottom: "auto" }}>
                                                     <img src={`${window.location.origin}/assets/images/gpt.png`} alt="gpt" width="50" />
                                                 </div>
                                                 <div className="assistant_prompt">
-                                                    <span>{item.content}</span>
+                                                    <span className="navbar-link prompt">{item.content}</span>
                                                 </div>
                                             </div>
+                                            </>
                                         )}
                                     </div>
                                 ))
@@ -87,7 +96,7 @@ class Chat extends PureComponent {
                                                 onChange={e => this.setState({ message: e.target.value })}
                                                 value={message}
                                             />
-                                            <button className="form-btn" disabled={message?.length > 1 ? false : true} onSubmit={e => this.submit(e, message)} style={{ width: "auto" }}>
+                                            <button className="form-btn"  ref={(ref) => (this.buttonRef = ref)} disabled={message?.length > 1 ? false : true} onSubmit={e => this.submit(e, message)} style={{ width: "auto" }}>
                                                 <ion-icon name="paper-plane"></ion-icon>
                                             </button>
                                         </div>

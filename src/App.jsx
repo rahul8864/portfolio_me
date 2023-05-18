@@ -9,7 +9,7 @@ function App() {
     <main>
       <Sidebar />
       <Navbar />
-      <Credit />
+      {/* <Credit /> */}
     </main>
   )
 }
