@@ -1,5 +1,10 @@
-import { PureComponent } from "react";
+import { PureComponent, createRef } from "react";
 import { Configuration, OpenAIApi } from 'openai';
+import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github.css";
 
 const config = new Configuration({
     organization: "org-RLj7ngpDPIqFh3QBPBGjFe5T",
@@ -15,11 +20,22 @@ class Chat extends PureComponent {
         isLoading: false
     }
 
+    scrollRef = createRef();
+
+    scrollToBottom = () => {
+        this.scrollRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+    
+
     componentDidMount() {
         // let messages = "Hello I'm Rahul Kumar";
         // this.setState({ message: "Hello I'm Rahul Kumar" }, (e) => this.submit(e, messages));
         // (e) => this.submit(e, message);
         this.buttonRef.click();
+        this.scrollToBottom()
+    }
+    componentDidUpdate() {
+        this.scrollToBottom()
     }
 
     submit = async (e, message) => {
@@ -45,7 +61,6 @@ class Chat extends PureComponent {
 
     render() {
         const { message, chat, isLoading } = this.state;
-        console.log(message);
         return (
             <article className="contact active" style={{ height: "100%", display: "flex", flexDirection: "column" }}>
                 <header>
@@ -74,7 +89,7 @@ class Chat extends PureComponent {
                                                     <img src={`${window.location.origin}/assets/images/gpt.png`} alt="gpt" width="50" />
                                                 </div>
                                                 <div className="assistant_prompt">
-                                                    <span className="navbar-link prompt">{item.content}</span>
+                                                    <ReactMarkdown className="navbar-link prompt" rehypePlugins={[rehypeRaw]}>{item.content}</ReactMarkdown>
                                                 </div>
                                             </div>
                                             </>
@@ -82,10 +97,11 @@ class Chat extends PureComponent {
                                     </div>
                                 ))
                             )}
+                            <div ref={this.scrollRef} />
                         </div>
                         <div className="user-input">
                             <div className="input-area">
-                                <section className="contact-form">
+                                <section className="contact-form" style={{ margin: "10px 0" }}>
                                     <form className="form" onSubmit={e => this.submit(e, message)}>
                                         <div className="input-wrapper-flex">
                                             <input
@@ -97,7 +113,7 @@ class Chat extends PureComponent {
                                                 value={message}
                                             />
                                             <button className="form-btn"  ref={(ref) => (this.buttonRef = ref)} disabled={message?.length > 1 ? false : true} onSubmit={e => this.submit(e, message)} style={{ width: "auto" }}>
-                                                <ion-icon name="paper-plane"></ion-icon>
+                                                <ion-icon name={isLoading ? 'hourglass' : "paper-plane"}></ion-icon>
                                             </button>
                                         </div>
                                     </form>
