@@ -3,6 +3,7 @@ import React from 'react';
 
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import resumePDF from './resume.pdf'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -76,7 +77,7 @@ import 'swiper/css';
             I'm constantly studying and keeping up with the most recent trends and technology in web development. I am able to approach problems creatively and come up with original solutions because to my quick adaptation and capacity for learning new abilities. My aim is to produce websites that go above and beyond what users and clients anticipate. I appreciate sharing my views and working with knowledgeable others. I appreciate you looking at my portfolio. I'm eager to collaborate with you and realise your vision.
           </p>
         </section>
-        <section className='service'>
+        {/* <section className='service'>
             <h3 className='h3 service-title'>What i'm doing</h3>
             <ul className="service-list">
                 {['app', 'design', 'dev', 'photo'].map((item, i) => (
@@ -93,8 +94,8 @@ import 'swiper/css';
                     </li>
                 ))}
             </ul>
-        </section>
-        <section className="testimonials">
+        </section> */}
+        {/* <section className="testimonials">
             <h3 className="h3 testimonials-title">Testimonials</h3>
             <ul className="testimonials-list has-scrollbar">
                 {Array.from(({ length : 4 }),(_, i) => (
@@ -117,8 +118,8 @@ import 'swiper/css';
                     </li>
                 ))}
             </ul>
-        </section>
-        <section className="clients">
+        </section> */}
+        {/* <section className="clients">
             <h3 className="h3 clients-title">Clients</h3>
             <ul className='clients-list has-scrollbar'>
                 {Array.from(Array(6), (_, i) => (
@@ -127,6 +128,12 @@ import 'swiper/css';
                     </li>
                 ))}
             </ul>
+        </section> */}
+        <section className='button-stack about-text'>
+            <button className='content-card content-button'>Hire me!</button>
+            <a href={resumePDF}>
+            <button className='content-card content-button'>Download CV</button>
+            </a>
         </section>
         <section className="tech">
             <h3 className="h3 tech-title">Tech Stack</h3>

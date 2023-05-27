@@ -112,6 +112,18 @@ body::-webkit-scrollbar-button {
     padding: 0 !important;
   }
 
+  .button-stack {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    margin-bottom: 20px;
+  }
+
+  .content-button {
+    color: var(--orange-yellow-crayola);
+    padding: 15px;
+  }
+
   @media only screen and(min-width: 450px) {
     .title-prompt {
         font-size: var(--fs-8);
