@@ -108,9 +108,10 @@ class Chat extends PureComponent {
                                                 type="text"
                                                 name="message"
                                                 className="form-input"
-                                                placeholder="Enter a prompt here..."
+                                                placeholder={isLoading ? "Loading..." : "Enter a prompt here..."}
                                                 onChange={e => this.setState({ message: e.target.value })}
                                                 value={message}
+                                                disabled={isLoading ? true : false}
                                             />
                                             <button className="form-btn"  ref={(ref) => (this.buttonRef = ref)} disabled={message?.length > 1 ? false : true} onSubmit={e => this.submit(e, message)} style={{ width: "auto" }}>
                                                 <ion-icon name={isLoading ? 'hourglass' : "paper-plane"}></ion-icon>
